@@ -10,17 +10,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="card-cta">
         <div className="flex flex-col gap-6 max-w-lg">
-          <h2 className="text-3xl font-bold">
-            Get interview ready with AI-powered practice and feedback
+          <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
+            <span className="text-gradient">Get interview ready</span> with AI-powered practice and feedback
           </h2>
-          <p className="text-lg opacity-90">
+          <p className="text-lg opacity-90 max-w-prose">
             Practice on real interview questions and get instant feedback to improve your skills and land your dream job.
           </p>
-          <Button asChild className="btn-primary max-w-fit">
-            <Link href="/interview">
-              Start an Interview
-            </Link>
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button asChild className="btn-primary max-w-fit">
+              <Link href="/interview">Start an Interview</Link>
+            </Button>
+            <Button asChild variant="secondary" className="btn-secondary max-w-fit">
+              <Link href="#">Browse Examples</Link>
+            </Button>
+          </div>
         </div>
         <div className="hidden lg:block">
           <Image

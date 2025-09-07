@@ -33,15 +33,14 @@ export default function Agent({ username, userId, type, interviewId, questions }
   const handleCall = async () => {
     setCallStatus(CallStatus.CONNECTING);
     
-    // TODO: Implement Vapi integration
-    console.log('Starting call with type:', type);
+    // Voice integration will be wired in via Issue #3
     
     // Simulate call connection
     setTimeout(() => {
       setCallStatus(CallStatus.ACTIVE);
       setIsSpeaking(true);
       
-      // Add mock message
+      // Seed first assistant message
       setMessages(prev => [...prev, {
         role: 'assistant',
         content: 'Hello! Ready to start your interview preparation?'
@@ -54,14 +53,13 @@ export default function Agent({ username, userId, type, interviewId, questions }
     setCallStatus(CallStatus.FINISHED);
     setIsSpeaking(false);
     
-    // TODO: Process call completion
+    // Post-call: route or generate feedback (Issue #4)
     if (type === 'generate') {
       // Redirect to homepage after interview generation
       router.push('/');
     } else {
       // Handle interview completion and feedback generation
-      console.log('Interview completed, generating feedback...');
-      // TODO: Generate feedback and redirect to feedback page
+      // Generate feedback and redirect to feedback page (stub)
     }
   };
 
@@ -78,7 +76,7 @@ export default function Agent({ username, userId, type, interviewId, questions }
     <>
       <div className="call-view">
         {/* AI Interviewer Card */}
-        <div className="card-interviewer">
+        <div className="card-interviewer card-hover">
           <div className="avatar">
             <Image
               src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=65&h=65&fit=crop&crop=center"
@@ -91,13 +89,14 @@ export default function Agent({ username, userId, type, interviewId, questions }
               <span className="absolute animate-ping rounded-full opacity-75 bg-blue-400 size-16" />
             )}
           </div>
-          <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mt-4">
-            AI Interviewer
-          </h3>
+          <div className="mt-4 flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"/>
+            <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100">AI Interviewer</h3>
+          </div>
         </div>
 
         {/* User Card */}
-        <div className="card-border">
+        <div className="card-border card-hover">
           <div className="card-content">
             <Image
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=center"

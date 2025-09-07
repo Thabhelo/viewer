@@ -13,14 +13,14 @@ interface InterviewSessionPageProps {
 export default async function InterviewSessionPage({ params }: InterviewSessionPageProps) {
   const { id } = await params;
   
-  // TODO: Replace with actual data fetching from database
+  // Replace with server action fetching (Issue #2)
   const interview = dummyInterviews.find(interview => interview.id === id);
   
   if (!interview) {
     notFound();
   }
 
-  // TODO: Get current user from authentication
+  // Replace with authenticated user (Issue #1)
   const currentUser = {
     id: 'user1',
     name: 'John Doe'

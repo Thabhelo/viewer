@@ -21,12 +21,12 @@ export default function InterviewCard(props: InterviewCardProps) {
   const coverImage = getRandomInterviewCover();
 
   return (
-    <div className="card-border w-full max-w-sm h-fit">
+    <div className="card-border w-full max-w-sm h-fit card-hover">
       <div className="p-6 space-y-4">
         {/* Badge */}
         <div className="relative">
-          <div className="absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-slate-600">
-            <p className="badge-text text-white text-xs font-medium capitalize">
+          <div className="absolute -top-3 -right-3 w-fit px-3 py-1.5 rounded-full">
+            <p className="badge-text capitalize">
               {normalizedType}
             </p>
           </div>

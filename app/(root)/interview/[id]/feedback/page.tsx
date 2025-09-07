@@ -8,7 +8,7 @@ interface FeedbackPageProps {
   params: Promise<RouteParams>;
 }
 
-// Mock feedback data - TODO: Replace with actual data fetching
+// Mock feedback data (replaced by real fetch in Issue #2 and #4)
 const mockFeedback: Feedback = {
   id: 'feedback1',
   interviewId: '1',
@@ -38,7 +38,7 @@ const mockFeedback: Feedback = {
 export default async function FeedbackPage({ params }: FeedbackPageProps) {
   const { id } = await params;
   
-  // TODO: Fetch actual feedback data based on interview ID
+  // Fetch actual feedback in server action (Issue #2)
   const feedback = mockFeedback;
   
   if (!feedback) {

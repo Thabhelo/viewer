@@ -23,15 +23,11 @@ export default function AuthForm({ type }: AuthFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // TODO: Implement authentication logic
-    console.log('Form submitted:', formData);
-    
+    // Authentication flows implemented in Issue #1
     if (isSignIn) {
-      // TODO: Sign in logic
-      console.log('Signing in...');
+      // Sign in flow (to be implemented)
     } else {
-      // TODO: Sign up logic
-      console.log('Creating account...');
+      // Sign up flow (to be implemented)
     }
   };
 
@@ -43,7 +39,7 @@ export default function AuthForm({ type }: AuthFormProps) {
   };
 
   return (
-    <div className="card-border w-full max-w-md">
+    <div className="card-border w-full max-w-md card-hover">
       <div className="card-padding">
         <div className="flex flex-col gap-6">
           {/* Logo and Title */}
@@ -60,6 +56,7 @@ export default function AuthForm({ type }: AuthFormProps) {
           <h3 className="text-center text-slate-600 dark:text-slate-400">
             Practice job interviews with AI
           </h3>
+          <p className="text-center text-xs text-slate-500">Create an account to save your interviews and track progress.</p>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="form">

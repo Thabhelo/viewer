@@ -66,7 +66,7 @@ export interface InterviewCardProps extends Interview {
 }
 
 export interface FormFieldProps<T> {
-  control: any;
+  control: unknown;
   name: string;
   label: string;
   placeholder?: string;

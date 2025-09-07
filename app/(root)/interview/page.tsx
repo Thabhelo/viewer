@@ -1,7 +1,7 @@
 import Agent from '@/components/agent';
 
 export default function InterviewGenerationPage() {
-  // TODO: Get current user from authentication
+  // Replace with authenticated user (Issue #1)
   const currentUser = {
     id: 'user1',
     name: 'John Doe'
